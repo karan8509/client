@@ -28,17 +28,18 @@ const UserUpdata = () => {
   const UpdataUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://server-hnr9.onrender.com/updataUser/${id}`, {
+      await axios.put(`https://server-hnr9.onrender.com/updateUser/${id}`, {
         name,
         age,
         mobile,
       });
+
       navigate("/");
       setName("");
       setAge("");
       setMobile("");
     } catch (error) {
-      console.log(error.message);
+      console.log("-->>", error.message);
     }
   };
 
@@ -50,7 +51,6 @@ const UserUpdata = () => {
           <input
             type="text"
             className="form-controls"
-            id="inputEmail3"
             placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -62,7 +62,6 @@ const UserUpdata = () => {
           <input
             type="number"
             className="form-controls"
-            id="inputPassword3"
             placeholder="Age"
             value={age}
             onChange={(e) => setAge(e.target.value)}
@@ -74,7 +73,6 @@ const UserUpdata = () => {
           <input
             type="number"
             className="form-controls"
-            id="inputPassword3"
             placeholder="Phone no :"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
